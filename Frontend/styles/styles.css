@@ -1,7 +1,7 @@
 /* 
-==================
-            Root and Var 
-================== 
+============================
+        Root and Var 
+============================
 */
 :root{
     --coffe: #4B2F35;
@@ -12,7 +12,8 @@
     --neon-purple: #df5dff;
     --lilas: #D78BCA;
     --creme: #F9D0C5;
-    --merengue: #F9E9E9;
+    --merengue: #f7dbd3;
+    --milk: #f9f0e9;
     --white: #fcefee;
 
     --font-display1: 'Playfair Display', Georgia;
@@ -48,9 +49,9 @@ ul {
 }
 
 /* 
-===============
-            HEADER
-=============== 
+=======================
+        HEADER
+=======================
 */
 
 header {
@@ -59,7 +60,7 @@ header {
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: var(--merengue); 
+    background-color: var(--milk); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -178,7 +179,7 @@ header {
         left: 0;
         width: 100%;
         padding: 20px;
-        background-color: var(--merengue);
+        background-color: var(--milk);
         border-bottom: 2px solid var(--purple);
     }
     header nav.menu-open {
@@ -209,9 +210,9 @@ header {
 }
 
 /* 
-============= 
-            Hero 
-=============
+=====================
+        Hero 
+=====================
 */
 
 .hero{
@@ -299,11 +300,12 @@ header {
 }
 
 /* 
-======================
+=====================
         SOBRE
-====================== 
+===================== 
 */
 
+/* hero */
 .sobre-hero{
     font-family: var(--font-display2);
     height: 50vh; 
@@ -318,27 +320,107 @@ header {
     justify-items: center;
     border-top: 40px solid var(--purple); /* Fixes overlay white error */
     border-bottom: 5px solid var(--purple);
+    background-color: var(--creme);
 }
 #historia-1{
-    height: 200px;
+    display: grid;
+    align-content: center;
+    height: 350px;
     width: 50rem;
-    border-right: 2px solid var(--coffe);
-    padding-right: 1.5rem;
+    border-right: 1px solid var(--coffe);
     margin-left: 0.5rem;
-    background-color: var(--creme);
-    border-top-left-radius: 20%;
-    border-bottom-left-radius: 20%;
+    background-color: var(--milk);
+    padding: 5rem;
+    padding-left: 3rem;
+    font-size: 1.5rem;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+#historia-1 h1 {
+    color: var(--lilas);
 }
 #historia-2{
-    height: 200px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 350px;
     width: 50rem;
-    padding-left: 1.5rem;
-    background-color: var(--creme);
-    border-top-right-radius: 20%;
-    border-bottom-right-radius: 20%;
+    border-left: 1px solid var(--coffe);
+    background-color: var(--milk);
     margin-right: 0.5rem;
+    padding: 5rem;
+    font-size: 1.5rem;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
+/* divisor */
+.sobre-divisor{
+    background-color: var(--purple);
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+.sobre-divisor div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sobre-divisor div h1 {
+    color: var(--white);
+}
+.sobre-divisor div p {
+    color: var(--creme);
+}
+/* equipe */
+
+.equipe {
+    background: linear-gradient(180deg, var(--creme) 50%, var(--purple) 50%);
+}
+.equipe-titulo {
+    display: grid;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: var(--creme);
+}
+
+.nossa-equipe {
+    height: 30rem;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, var(--white) 80%, var(--merengue));
+
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+.nossa-equipe div img {
+    width: 15rem;
+    border: 0.4rem groove var(--dry-purple);
+}
+.especialistas {
+    display: grid;
+    justify-items: center;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+.especialistas h2 {
+    font-family: var(--font-display1);
+}
+.especialistas h4 {
+    color: var(--lilas);
+    font-family: var(--font-display1);
+}
+.especialistas p {
+    width:20rem;
+    font-family: var(--font-display2);
+}
 
 /* 
 ======================
