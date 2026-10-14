@@ -128,44 +128,60 @@ links.forEach(link => {
 const conteudos = {
 
     corte: `
-        <h2>O corte certo muda tudo</h2>
-        <p>
-            Nossas cabeleireiras analisam o formato do seu rosto,
-            textura e estilo de vida para criar um corte que
-            realce o que há de mais bonito em você.
-        </p>
-
-        <button>QUERO AGENDAR</button>
+        <div class="detalhes-imagem">
+            <img src="./images/corte.jpg" alt="Serviço de corte e estilo">
+        </div>
+        <div class="detalhes-texto">
+            <h2>O corte certo muda tudo</h2>
+            <p>
+                Nossas cabeleireiras analisam o formato do seu rosto,
+                textura e estilo de vida para criar um corte que
+                realce o que há de mais bonito em você.
+            </p>
+            <button>QUERO AGENDAR</button>
+        </div>
     `,
 
     coloracao: `
-        <h2>Uma nova cor para você</h2>
-        <p>
-            Trabalhamos com técnicas de coloração,
-            mechas, balayage e outros estilos.
-        </p>
-
-        <button>QUERO AGENDAR</button>
+        <div class="detalhes-imagem">
+            <img src="./images/coloracao.jpg" alt="Serviço de coloração">
+        </div>
+        <div class="detalhes-texto"class="detalhes-texto">
+            <h2>Uma nova cor para você</h2>
+            <p>
+                Trabalhamos com técnicas de coloração,
+                mechas, balayage e outros estilos.
+            </p>
+            <button>QUERO AGENDAR</button>
+        </div>
     `,
 
     manicure: `
-        <h2>Unhas perfeitas</h2>
-        <p>
-            Cuidados para suas unhas com esmaltes,
-            acrílico, fibra e nail art.
-        </p>
-
-        <button>QUERO AGENDAR</button>
+        <div class="detalhes-imagem">
+            <img src="./images/manicure.jpg" alt="Serviço de manicure e pedicure">
+        </div>
+        <div class="detalhes-texto">
+            <h2>Unhas perfeitas</h2>
+            <p>
+                Cuidados para suas unhas com esmaltes,
+                acrílico, fibra e nail art.
+            </p>
+            <button>QUERO AGENDAR</button>
+        </div>
     `,
 
     tratamentos: `
-        <h2>Cuidados para seus cabelos</h2>
-        <p>
-            Hidratação, cronograma capilar, botox
-            e cauterização.
-        </p>
-
-        <button>QUERO AGENDAR</button>
+        <div class="detalhes-imagem">
+            <img src="./images/tratamentos.jpg" alt="Serviço de tratamentos">
+        </div>
+        <div class="detalhes-texto">
+            <h2>Cuidados para seus cabelos</h2>
+            <p>
+                Hidratação, cronograma capilar, botox
+                e cauterização.
+            </p>
+            <button>QUERO AGENDAR</button>
+        </div>
     `
 };
 
@@ -181,6 +197,6 @@ servicos.forEach(servico =>{
 
         detalhes.innerHTML = conteudos[tipo];
 
-        detalhes.style.display = "block";
+        detalhes.style.display = "grid";
     })
 })
