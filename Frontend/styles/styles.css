@@ -21,17 +21,17 @@
     --font-body:    'Raleway', sans-serif;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+html{
     scroll-behavior: smooth;
 }
 
-body {
+body{
     font-family: var(--font-body);
     background-color: var(--white);
     color: var(--coffe);
@@ -39,12 +39,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 /* Removing sublineal links not used for now, but active just if*/
-a {
+a{
     text-decoration: none;
     color: inherit;
     transition: 0.3s;
 }
-ul {
+ul{
     list-style-type: none;
 }
 
@@ -54,7 +54,7 @@ ul {
 =======================
 */
 
-header {
+header{
     position: fixed;
     top: 0;
     left: 0;
@@ -71,7 +71,7 @@ header {
 }
 
 /* === Logo === */
-.logo {
+.logo{
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -86,21 +86,21 @@ header {
 }
 
 /* === Nav Bar === */
-.nav-links {
+.nav-links{
     display: flex;
     gap: 1.5rem;
 }
-.nav-links a {
+.nav-links a{
     color: var(--coffe);
     font-size: 0.9rem;
     font-weight: 300;
     text-transform: uppercase;
 }
-.nav-links a:hover {
+.nav-links a:hover{
     color: var(--neon-purple);
 }
 
-.nav-links a.active {
+.nav-links a.active{
     color: var(--purple);
     border-bottom: 3px solid var(--lilas);
     border-radius: 20%;
@@ -110,12 +110,12 @@ header {
 }
 
 /* Hide header/nav */
-.header-hidden {
+.header-hidden{
     top: -80px; 
 }
 
 /* Show header/nav */
-.header-reopen {
+.header-reopen{
     position: fixed;
     top: 0;
     left: 50%;
@@ -137,77 +137,24 @@ header {
     font-family: var(--font-body);
     font-weight: 700;
 }
-.header-reopen.visible {
+.header-reopen.visible{
     transform: translateX(-50%) translateY(0);
 }
-.reopen-arrow {
+.reopen-arrow{
     font-size: 1.3rem;
     line-height: 1;
 }
-.reopen-text {
+.reopen-text{
     font-size: 0.65rem;
     letter-spacing: 1px;
 }
 .header-reopen:hover,
-.header-reopen:focus-visible {
+.header-reopen:focus-visible{
     background-color: var(--creme);
     outline: 2px solid var(--purple);
     outline-offset: 2px;
 }
 
-/* === Mobile/Short-sized screen Menu === */
-.menu-toggle {
-    display: none;
-    border: none;
-    background: transparent;
-    color: var(--coffe);
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 0 20px;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    header nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background-color: var(--milk);
-        border-bottom: 2px solid var(--purple);
-    }
-    header nav.menu-open {
-        display: block;
-    }
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    header.header-hidden nav {
-        display: none;
-    }
-    .logo {
-        font-size: 1.1rem;
-    }
-    .logo img {
-        width: 35px;
-        height: 40px;
-    }
-}
-/* Less Animations */
-@media (prefers-reduced-motion: reduce) {
-    header,
-    .header-reopen {
-        transition: none;
-    }
-}
 
 /* 
 =====================
@@ -218,7 +165,9 @@ header {
 .hero{
     background-image: url("../images/Provisional_Bg.jpg");
     font-family: var(--font-display2);
-    height: 100vh; 
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
     width: 100%;
     background-size: cover;
     background-position: center; 
@@ -226,56 +175,57 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
-    text-align: start;
-    justify-items: center;
+    text-align: left;
     border-top: 80px solid var(--purple); /* Fixes overlay white error */
     border-bottom: 5px solid var(--purple);
 }
-.hero::before {
+.hero::before{
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(98, 77, 105, 0.5);
     z-index: 1;
 }
-.hero h1 {
+.hero h1{
     position: relative;
     z-index: 2;
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 900;
     letter-spacing: 2px;
     color: var(--white);
     display: grid;
     justify-items: start;
     line-height: 0.6;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
-.hero h1 br {
+.hero h1 br{
     max-height: 1px;
 }
-.hero h1 .destaque {
+.hero h1 .destaque{
     color: var(--dry-wine);
     font-style: italic;
 }
-.hero h4 {
+.hero h4{
     color: var(--creme);
     font-size: 1.5rem;
     margin-bottom: 40px;
 }
-.home-hero .hero-overlay {
+.home-hero .hero-overlay{
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 150px;
+    width: 100%;
+    max-width: 1100px;
+    padding: clamp(24px, 6vw, 100px);
+    text-align: left;
 }
-.home-hero p {
+.home-hero p{
     font-size: 1.2rem;
     margin-top: 20px;
     font-weight: 300;
     color: var(--creme);
     font-family: var(--font-display1);
 }
-.hero-overlay .button {
+.hero-overlay .button{
     display: grid;
     grid-auto-flow: column;
     align-content: space-around;
@@ -294,6 +244,7 @@ header {
 .agendar:hover{
     background-color: #b9648cc5;
     border: 2px solid var(--dry-wine);
+    transform: translateY(-2px);
 }
 .ver-portfolio{
     width: 10rem;
@@ -304,6 +255,7 @@ header {
 }
 .ver-portfolio:hover{
     background-color: #db7fbf69;
+    transform: translateY(-2px);
 }
 
 
@@ -313,7 +265,7 @@ header {
 ====================== 
 */
 
-#servicos {
+#servicos{
     text-align: center;
     padding: 50px;
     border-top: 15px solid var(--purple);
@@ -321,14 +273,13 @@ header {
     justify-items: center;
 }
 
-.servicos-container {
+.servicos-container{
     display: flex !important;
     column-gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
-
-.servico {
+.servico{
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 200px;
@@ -342,22 +293,19 @@ header {
     transition: 0.3s;
     border-radius: 20px;
 }
-.servico p {
+.servico p{
     font-size: 12px;
-
 }
-
-.servico:hover {
+.servico:hover{
     transform: translateY(-5px);
 }
-
-.servico.ativo {
+.servico.ativo{
     background-color: var(--coffe);
     color: white;
     border: 5px solid var(--purple);
 }
 
-#detalhes-servico {
+#detalhes-servico{
     display: none;
     grid-template-columns: 2fr 3fr;
     align-content: center;
@@ -371,23 +319,21 @@ header {
     border-radius: 20px;
     margin-top: 5px;
 }
-.detalhes-imagem {
+.detalhes-imagem{
     width: 100%;
     height: 100%;
     min-height: 300px;
     overflow: hidden;
     border-radius: 15px;
 }
-
-.detalhes-imagem img {
+.detalhes-imagem img{
     width: 100%;
     height: 100%;
     min-height: 300px;
     object-fit: cover;
     display: block;
 }
-
-.detalhes-texto {
+.detalhes-texto{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -396,30 +342,9 @@ header {
     gap: 20px;
     padding: 10px;
 }
-
-.detalhes-texto p {
+.detalhes-texto p{
     max-width: 400px;
 }
-
-@media (max-width: 768px) {
-    #detalhes-servico {
-        grid-template-columns: 1fr;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .detalhes-imagem {
-        height: 220px;
-        min-height: 220px;
-    }
-
-    .detalhes-imagem img {
-        height: 220px;
-        min-height: 220px;
-    }
-}
-
-
 
 /* 
 =====================
@@ -430,77 +355,76 @@ header {
 /* hero */
 .sobre-hero{
     font-family: var(--font-display2);
-    height: 50vh; 
     width: 100%;
-    background-size: cover;
-    background-position: center; 
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    position: relative;
-    text-align: start;
-    justify-items: center;
     border-top: 20px solid var(--purple);
     background-color: var(--creme);
+    padding: 10px;
+    gap: 0;
+}
+#historia-1, #historia-2{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    
+    background-color: var(--milk);
+    padding: clamp(1.5rem, 4vw, 4rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 #historia-1{
-    display: grid;
-    align-content: center;
-    height: 350px;
-    width: 50rem;
     border-right: 1px solid var(--coffe);
-    margin-left: 0.5rem;
-    background-color: var(--milk);
-    padding: 5rem;
-    padding-left: 3rem;
-    font-size: 1.5rem;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-radius: 50px 0 0 50px;
 }
-#historia-1 h1 {
+#historia-1 h1{
     color: var(--lilas);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin: 0.5rem 0 1rem;
 }
 #historia-2{
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    height: 350px;
-    width: 50rem;
     border-left: 1px solid var(--coffe);
-    background-color: var(--milk);
-    margin-right: 0.5rem;
-    padding: 5rem;
-    font-size: 1.5rem;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-radius: 0 50px 50px 0;
 }
 
 /* divisor */
 .sobre-divisor{
     background-color: var(--purple);
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     justify-items: center;
-    padding: 0.5rem;
-    font-size: 1.2rem;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    text-align: center;
 }
-.sobre-divisor div {
+.sobre-divisor div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 0;
+    gap: 2px;
 }
-.sobre-divisor div h1 {
+.sobre-divisor div h1{
     color: var(--white);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin: 0;
 }
-.sobre-divisor div p {
+.sobre-divisor div p{
     color: var(--creme);
+    font-size: clamp(0.65rem, 1.2vw, 0.9rem);
+    line-height: 1.4;
+    margin: 0;
 }
 /* equipe */
 
-.equipe {
+.equipe{
     background: linear-gradient(180deg, var(--creme) 50%, var(--purple) 50%);
 }
-.equipe-titulo {
+.equipe-titulo{
     display: grid;
     justify-content: center;
     font-size: 1.5rem;
@@ -508,41 +432,54 @@ header {
     background-color: var(--creme);
 }
 
-.nossa-equipe {
-    height: 30rem;
+.nossa-equipe{
+    min-height: 30rem;
     display: grid;
-    grid-auto-flow: column;
-    justify-content: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
     align-items: center;
+    gap: 40px;
+    padding: 40px clamp(20px, 6vw, 100px);
     background: linear-gradient(180deg, var(--white), var(--milk) 80%);
-
-    border-top-left-radius: 150px;
-    border-top-right-radius: 150px;
-    border-bottom-right-radius: 10%;
-    border-bottom-left-radius: 10%;
+    border-radius: 150px 150px 10% 10%;
 }
-.nossa-equipe div img {
+.nossa-equipe div img{
     width: 15rem;
     border: 0.4rem groove var(--dry-purple);
 }
-.especialistas {
+.especialistas{
     display: grid;
     justify-items: center;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    align-content: start;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
 }
-.especialistas h2 {
+.especialistas h2{
     font-family: var(--font-display1);
+    font-size: clamp(1,1rem, 2vw, 1.5rem);
 }
-.especialistas h4 {
+.especialistas h4{
     color: var(--lilas);
     font-family: var(--font-display1);
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
 }
-.especialistas p {
-    width:20rem;
+.especialistas p{
+    width: 100%;
+    max-width: 20rem;
     font-family: var(--font-display2);
+    font-size: 0.95rem;
 }
-
+.especialistas img{
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 0.4rem groove var(--dry-purple);
+    border-radius: 12px;
+}
 
 
 /* 
@@ -550,6 +487,178 @@ header {
         FOOTER
 ====================== 
 */
+
+/* === Mobile/Short-sized screen Menu === */
+.menu-toggle{
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--coffe);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    /* 
+    ==============
+        header
+    ==============
+    */
+    header{
+        padding: 0 20px;
+    }
+    .menu-toggle{
+        display: block;
+    }
+    header nav{
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: var(--milk);
+        border-bottom: 2px solid var(--purple);
+    }
+    header nav.menu-open{
+        display: block;
+    }
+    .nav-links{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    header.header-hidden nav{
+        display: none;
+    }
+    .logo{
+        font-size: 1.1rem;
+    }
+    .logo img{
+        width: 35px;
+        height: 40px;
+    }
+    /* 
+    ===============
+        Inicio
+    ===============
+    */
+
+    /* Hero */
+    .hero{
+        height: auto;
+        min-height: 100svh;
+        border-top-width: 80px;
+        padding-bottom: 30px;
+    }
+
+    .home-hero .hero-overlay{
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 24px;
+    }
+
+    .hero h1{
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        line-height: 1;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+    }
+
+    .hero h4{
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .home-hero p{
+        font-size: 1rem;
+    }
+
+    .hero-overlay .button{
+        grid-auto-flow: row;
+        justify-items: center;
+    }
+
+    .button button{
+        width: min(100%, 280px);
+    }
+
+    /* Serviços */
+    #detalhes-servico{
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+    .detalhes-imagem{
+        height: 220px;
+        min-height: 220px;
+    }
+
+    .detalhes-imagem img{
+        height: 220px;
+        min-height: 220px;
+    }
+    /* 
+    =============
+        Sobre
+    =============
+    */
+
+    /* Historias */
+    .sobre-hero{
+        flex-direction: column;
+        padding: 20px;
+    }
+    #historia-1,
+    #historia-2{
+        width: 100%;
+        flex: auto;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 0;
+    }
+    #historia-1{
+        border-radius: 20px 20px 0 0;
+    }
+    #historia-2{
+        border-radius: 0 0 20px 20px;
+        padding-top: 0;
+    }
+    /* Divisor */
+    .sobre-divisor{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px 10px;
+        padding: 15px 10px;
+    }
+    .sobre-divisor div p{
+        max-width: 150px;
+    }
+    /* Equipe */
+    .nossa-equipe{
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 35px;
+        padding: 35px 20px;
+        border-radius: 70px 70px 30px 30px;
+    }
+    .especialistas{
+        max-width: 360px;
+    }
+    .especialistas img{
+        max-width: 220px;
+    }
+}
+/* Less Animations */
+@media (prefers-reduced-motion: reduce){
+    header,
+    .header-reopen{
+        transition: none;
+    }
+}
+
+
+
+
 
 /* Hide scrollbar until hover */
 ::-webkit-scrollbar { width: 4px; }
