@@ -208,14 +208,14 @@ header{
 .hero h4{
     color: var(--creme);
     font-size: 1.5rem;
-    margin-bottom: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 .home-hero .hero-overlay{
     position: relative;
     z-index: 2;
-    width: 100%;
-    max-width: 1100px;
-    padding: clamp(24px, 6vw, 100px);
+    width: 40%;
+    max-width: 1000px;
     text-align: left;
 }
 .home-hero p{
@@ -226,9 +226,9 @@ header{
     font-family: var(--font-display1);
 }
 .hero-overlay .button{
-    display: grid;
-    grid-auto-flow: column;
-    align-content: space-around;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
 }
 .button button{
@@ -443,10 +443,6 @@ header{
     background: linear-gradient(180deg, var(--white), var(--milk) 80%);
     border-radius: 150px 150px 10% 10%;
 }
-.nossa-equipe div img{
-    width: 15rem;
-    border: 0.4rem groove var(--dry-purple);
-}
 .especialistas{
     display: grid;
     justify-items: center;
@@ -477,9 +473,19 @@ header{
     max-width: 240px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border: 0.4rem groove var(--dry-purple);
+    border: 0.2rem solid var(--purple);
     border-radius: 12px;
 }
+
+/* 
+=================
+    Portfolio
+=================
+*/
+
+
+
+
 
 
 /* 
@@ -498,6 +504,29 @@ header{
     cursor: pointer;
 }
 
+/* === Tablets === */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home-hero .hero-overlay {
+        width: 60%;
+        max-width: 700px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4rem);
+        line-height: 0.85;
+    }
+
+    .hero h4 {
+        font-size: 1.1rem;
+    }
+
+    .home-hero p {
+        font-size: 1.05rem;
+    }
+}
+
+/* === Mobile === */
 @media (max-width: 768px){
     /* 
     ==============
@@ -556,6 +585,8 @@ header{
         width: 100%;
         max-width: 100%;
         padding: 40px 24px;
+        margin: 0;
+        text-align: left;
     }
 
     .hero h1{
@@ -563,24 +594,37 @@ header{
         line-height: 1;
         letter-spacing: 1px;
         margin-bottom: 25px;
+        overflow-wrap: anywhere;
     }
 
     .hero h4{
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 3.5vw, 1rem);
+        line-height: 1.5;
+        letter-spacing: 1.5px;
         margin-bottom: 20px;
     }
 
     .home-hero p{
-        font-size: 1rem;
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+        line-height: 1.6;
+        margin-top: 16px;
     }
 
     .hero-overlay .button{
-        grid-auto-flow: row;
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
     }
 
     .button button{
         width: min(100%, 280px);
+        min-height: 48px;
+        height: auto;
+        margin: 0;
+        padding: 12px;
     }
 
     /* Serviços */

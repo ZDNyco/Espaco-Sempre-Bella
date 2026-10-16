@@ -1,9 +1,16 @@
-const servicos = document.querySelectorAll(".servico");
-const detalhes = document.querySelector("#detalhes-servico");
 const header = document.querySelector("header");
 const reopenButton = document.querySelector(".header-reopen");
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("header nav");
+
+const servicos = document.querySelectorAll(".servico");
+const detalhes = document.querySelector("#detalhes-servico");
+
+const portfolioGaleria = document.querySelector(".portfolio-galeria");
+const portfolioDestaque = document.querySelector(".portfolio-destaque");
+const portfolioRecomendacoes = document.querySelector(".portfolio-recomendacoes");
+const portfolioImagens = document.querySelector(".portfolio-imagens");
+
 
 /* === Smart Header === */
 
@@ -200,3 +207,53 @@ servicos.forEach(servico =>{
         detalhes.style.display = "grid";
     })
 })
+
+
+/* === Smart Portfolio === */
+
+const botoesPortfolio = document.querySelectorAll(".imgs-buttons button");
+const imagensPortfolio = portfolioImagens ? Array.from(portfolioImagens.querySelectorAll("img")): [];
+
+function mostrarPortfolio(categoria = "todos") {
+    if (!portfolioDestaque || !portfolioRecomendacoes) return;
+
+    const imagensFiltradas = imagensPortfolio.filter(imagem => {
+        return categoria === "todos" ||
+            imagem.dataset.categoria === categoria;
+    });
+
+    portfolioDestaque.innerHTML = "";
+    portfolioRecomendacoes.innerHTML = "";
+
+    if (imagensFiltradas.length === 0) return;
+
+    const imagemPrincipal = imagensFiltradas[0].cloneNode(true);
+    imagemPrincipal.classList.add("imagem-principal");
+
+    portfolioDestaque.appendChild(imagemPrincipal);
+
+    imagensFiltradas.slice(1).forEach(imagem => {
+        const imagemSecundaria = imagem.cloneNode(true);
+        imagemSecundaria.classList.add("imagem-secundaria");
+
+        portfolioRecomendacoes.appendChild(imagemSecundaria);
+    });
+}
+
+// Category filter
+botoesPortfolio.forEach(botao => {
+    botao.addEventListener("click", () => {
+        mostrarPortfolio(botao.id);
+
+        botoesPortfolio.forEach(item => {
+            item.classList.toggle("ativo", item === botao);
+        });
+    });
+});
+
+mostrarPortfolio("todos");
+
+const botaoTodos = document.querySelector("#todos");
+if (botaoTodos) {
+    botaoTodos.classList.add("ativo");
+}
