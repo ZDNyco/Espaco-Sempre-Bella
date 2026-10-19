@@ -11,6 +11,12 @@ const portfolioDestaque = document.querySelector(".portfolio-destaque");
 const portfolioRecomendacoes = document.querySelector(".portfolio-recomendacoes");
 const portfolioImagens = document.querySelector(".portfolio-imagens");
 
+const formAgendamento = document.querySelector("#form-agendamento");
+const whatsappDireto = document.querySelector("#whatsapp-direto");
+
+const numeroWhatsApp = "5511999999999";
+const campoData = document.querySelector("#data");
+
 
 /* === Smart Header === */
 
@@ -212,7 +218,27 @@ servicos.forEach(servico =>{
 /* === Smart Portfolio === */
 
 const botoesPortfolio = document.querySelectorAll(".imgs-buttons button");
-const imagensPortfolio = portfolioImagens ? Array.from(portfolioImagens.querySelectorAll("img")): [];
+
+const imagensPortfolio = portfolioImagens
+    ? Array.from(portfolioImagens.querySelectorAll("img"))
+    : [];
+
+function criarImagemPortfolio(imagemOriginal, classe) {
+    const container = document.createElement("div");
+    container.classList.add("portfolio-item");
+
+    const imagem = imagemOriginal.cloneNode(true);
+    imagem.classList.add(classe);
+
+    const descricao = document.createElement("span");
+    descricao.classList.add("portfolio-descricao");
+    descricao.textContent = imagemOriginal.alt;
+
+    container.appendChild(imagem);
+    container.appendChild(descricao);
+
+    return container;
+}
 
 function mostrarPortfolio(categoria = "todos") {
     if (!portfolioDestaque || !portfolioRecomendacoes) return;
@@ -227,20 +253,25 @@ function mostrarPortfolio(categoria = "todos") {
 
     if (imagensFiltradas.length === 0) return;
 
-    const imagemPrincipal = imagensFiltradas[0].cloneNode(true);
-    imagemPrincipal.classList.add("imagem-principal");
+    // First image: destaque.
+    const imagemPrincipal = criarImagemPortfolio(
+        imagensFiltradas[0],
+        "imagem-principal"
+    );
 
     portfolioDestaque.appendChild(imagemPrincipal);
 
+    // Rest of images: recomendacoes.
     imagensFiltradas.slice(1).forEach(imagem => {
-        const imagemSecundaria = imagem.cloneNode(true);
-        imagemSecundaria.classList.add("imagem-secundaria");
+        const imagemSecundaria = criarImagemPortfolio(
+            imagem,
+            "imagem-secundaria"
+        );
 
         portfolioRecomendacoes.appendChild(imagemSecundaria);
     });
 }
 
-// Category filter
 botoesPortfolio.forEach(botao => {
     botao.addEventListener("click", () => {
         mostrarPortfolio(botao.id);
@@ -254,6 +285,68 @@ botoesPortfolio.forEach(botao => {
 mostrarPortfolio("todos");
 
 const botaoTodos = document.querySelector("#todos");
+
 if (botaoTodos) {
     botaoTodos.classList.add("ativo");
+}
+
+/* === Smart Contato === */
+
+// Only new date selection
+if (campoData) {
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+    const dia = String(hoje.getDate()).padStart(2, "0");
+
+    campoData.min = `${ano}-${mes}-${dia}`;
+}
+
+//Direct contact link
+
+if (whatsappDireto) {
+    const mensagemInicial =
+        "Olá! Gostaria de saber mais sobre os serviços do Espaço Sempre Bella.";
+
+    whatsappDireto.href =
+        `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemInicial)}`;
+}
+
+//Forms sender
+
+if (formAgendamento) {
+    formAgendamento.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nome = document.querySelector("#nome").value.trim();
+        const telefone = document.querySelector("#telefone").value.trim();
+        const servico = document.querySelector("#servico").value;
+        const data = document.querySelector("#data").value;
+        const horario = document.querySelector("#horario-preferido").value;
+        const observacoes =
+            document.querySelector("#observacoes").value.trim();
+
+        const dataFormatada = data
+            ? data.split("-").reverse().join("/")
+            : "";
+
+        const mensagem = [
+            "Olá! Gostaria de solicitar um agendamento no Espaço Sempre Bella.",
+            "",
+            "*Nome:* " + nome,
+            "*Telefone:* " + telefone,
+            "*Serviço:* " + servico,
+            "*Data preferida:* " + dataFormatada,
+            "*Horário preferido:* " + horario,
+            "*Observações:* " + (observacoes || "Nenhuma"),
+            "",
+            "Aguardo a confirmação. Obrigada!"
+        ].join("\n");
+
+        const urlWhatsApp =
+            "https://wa.me/" + numeroWhatsApp +
+            "?text=" + encodeURIComponent(mensagem);
+
+        window.open(urlWhatsApp, "_blank");
+    });
 }

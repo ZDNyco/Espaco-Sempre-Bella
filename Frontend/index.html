@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espaço Sempre Bella</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header>
@@ -139,49 +140,142 @@
         </section>
 
         <section id="portfolio">
-            <div>
-                <p>NOSSO TRABALHO</p>
-                <h1>Portfólio</h1>
-                <p>Cada foto é uma história de transformação</p>
-            </div>
-            <div class="imgs-buttons">
-                <button id="todos">TODOS</button>
-                <button id="cabelo">CABELO</button>
-                <button id="unhas">UNHAS</button>
-                <button id="salao">SALÃO</button>
-            </div>
-            <div class="portfolio-galeria">
-                <div class="portfolio-destaque">
+            <div class="portfolio-content">
+                <div class="portfolio-titulo">
+                    <p>NOSSO TRABALHO</p>
+                    <h1>Portfólio</h1>
+                    <p>Cada foto é uma história de transformação</p>
                 </div>
+                <div class="imgs-buttons">
+                    <button id="todos">TODOS</button>
+                    <button id="cabelo">CABELO</button>
+                    <button id="unhas">UNHAS</button>
+                    <button id="salao">SALÃO</button>
+                </div>
+                <div class="portfolio-galeria">
+                    <div class="portfolio-destaque">
+                    </div>
             
-                <div class="portfolio-recomendacoes">
-                </div>
-                <div class="portfolio-imagens">
-                    <img src="./images/galeria-cabelo1.jpg" alt="cachos perfeitos com babyliss" data-categoria="cabelo">
-                    <img src="./images/galeria-cabelo2.jpg" alt="finalização profissional com secador" data-categoria="cabelo">
-                    <img src="./images/galeria-cabelo3.jpg" alt="coloração ruiva vibrante - balayage" data-categoria="cabelo">
+                    <div class="portfolio-recomendacoes">
+                    </div>
+                    <div class="portfolio-imagens">
+                        <img src="./images/galeria-cabelo1.jpg" alt="Cachos Perfeitos  Babyliss" data-categoria="cabelo">
+                        <img src="./images/galeria-cabelo2.jpg" alt="Finalização Profissional com Secador" data-categoria="cabelo">
+                        <img src="./images/galeria-cabelo3.jpg" alt="Coloração Ruiva Vibrante - Balayage" data-categoria="cabelo">
 
-                    <img src="./images/galeria-salao1.jpg" alt="espaço profissional" data-categoria="salao">
-                    <img src="./images/galeria-salao2.jpg" alt="nosso espaço aconchegante" data-categoria="salao">
-                    <img src="./images/galeria-salao3.jpg" alt="ambiente pensado para o seu conforto" data-categoria="salao">
+                        <img src="./images/galeria-salao1.jpg" alt="Espaço Profissional" data-categoria="salao">
+                        <img src="./images/galeria-salao2.jpg" alt="Nosso Espaço Aconchegante" data-categoria="salao">
+                        <img src="./images/galeria-salao3.jpg" alt="Ambiente Pensado para o seu Conforto" data-categoria="salao">
 
-                    <img src="./images/galeria-unhas1.jpg" alt="gel rosa nude com acabamento acetinado" data-categoria="unhas">
-                    <img src="./images/galeria-unhas2.jpg" alt="french em gel com fibra de vidro" data-categoria="unhas">
-                    <img src="./images/galeria-unhas3.jpg" alt="vermelho clássico - atemporal e poderoso" data-categoria="unhas">
+                        <img src="./images/galeria-unhas1.jpg" alt="Gel Rosa Nude com acabamento Acetinado" data-categoria="unhas">
+                        <img src="./images/galeria-unhas2.jpg" alt="French em Gel com Fibra de Vidro" data-categoria="unhas">
+                        <img src="./images/galeria-unhas3.jpg" alt="Vermelho Clássico - Atemporal e Poderoso" data-categoria="unhas">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contato">
-            <div class="horario">
-                <p>RESERVE SEU HORÁRIO</p>
-                <h1>Agendamento Online</h1>
-                <p>Preencha o formulário e conheça seu orçamento</p>
-            </div>
+            
             <div class="forms">
-                <form action=""></form>
+                <div class="horario">
+                    <p>RESERVE SEU HORÁRIO</p>
+                    <h1>Agendamento Online</h1>
+                    <p>Preencha o formulário e conheça seu orçamento</p>
+                </div>
+                <form id="form-agendamento">
+
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome completo"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+        
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(11) 99999-9999"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+        
+                    <div class="campo">
+                        <label for="servico">Serviço desejado</label>
+                        <select id="servico" name="servico" required>
+                            <option value="" disabled selected>
+                                Selecione um serviço
+                            </option>
+                            <option value="Corte e Estilo">Corte e Estilo</option>
+                            <option value="Coloração">Coloração</option>
+                            <option value="Manicure e Pedicure">
+                                Manicure e Pedicure
+                            </option>
+                            <option value="Tratamentos">Tratamentos</option>
+                        </select>
+                    </div>
+        
+                    <div class="campo">
+                        <label for="data">Data preferida</label>
+                        <input
+                            type="date"
+                            id="data"
+                            name="data"
+                            required
+                        >
+                    </div>
+        
+                    <div class="campo">
+                        <label for="horario-preferido">Horário preferido</label>
+                        <select
+                            id="horario-preferido"
+                            name="horario-preferido"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Selecione um horário
+                            </option>
+                            <option value="Manhã">Manhã 07:00~12:00</option>
+                            <option value="Tarde">Tarde 13:00~18:00</option>
+                            <option value="Tarde">Noite 19:00~22:00</option>
+                            <option value="Horário flexível">Horário flexível</option>
+                        </select>
+                    </div>
+        
+                    <div class="campo">
+                        <label for="observacoes">Observações</label>
+                        <textarea
+                            id="observacoes"
+                            name="observacoes"
+                            rows="4"
+                            placeholder="Conte-nos mais sobre o que deseja (opcional)"
+                        ></textarea>
+                    </div>
+        
+                    <button type="submit" class="btn-agendar">
+                        Solicitar agendamento
+                    </button>
+        
+                </form>
             </div>
             <div class="whatsapp">
+                <p>Prefere falar diretamente conosco?</p>
+                <a 
+                id="whatsapp-direto"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Fale conosco pelo WhatsApp</span>
+                </a>
 
             </div>
         </section>
