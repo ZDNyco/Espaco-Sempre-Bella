@@ -142,7 +142,7 @@ const conteudos = {
 
     corte: `
         <div class="detalhes-imagem">
-            <img src="./images/corte.jpg" alt="Serviço de corte e estilo">
+            <img src="./images/galeria-salao1.jpg" alt="Serviço de corte e estilo">
         </div>
         <div class="detalhes-texto">
             <h2>O corte certo muda tudo</h2>
@@ -157,9 +157,9 @@ const conteudos = {
 
     coloracao: `
         <div class="detalhes-imagem">
-            <img src="./images/coloracao.jpg" alt="Serviço de coloração">
+            <img src="./images/galeria-cabelo3.jpg" alt="Serviço de coloração">
         </div>
-        <div class="detalhes-texto"class="detalhes-texto">
+        <div class="detalhes-texto">
             <h2>Uma nova cor para você</h2>
             <p>
                 Trabalhamos com técnicas de coloração,
@@ -171,7 +171,7 @@ const conteudos = {
 
     manicure: `
         <div class="detalhes-imagem">
-            <img src="./images/manicure.jpg" alt="Serviço de manicure e pedicure">
+            <img src="./images/galeria-unhas3.jpg" alt="Serviço de manicure e pedicure">
         </div>
         <div class="detalhes-texto">
             <h2>Unhas perfeitas</h2>
@@ -185,7 +185,7 @@ const conteudos = {
 
     tratamentos: `
         <div class="detalhes-imagem">
-            <img src="./images/tratamentos.jpg" alt="Serviço de tratamentos">
+            <img src="./images/galeria-cabelo2.jpg" alt="Serviço de tratamentos">
         </div>
         <div class="detalhes-texto">
             <h2>Cuidados para seus cabelos</h2>
