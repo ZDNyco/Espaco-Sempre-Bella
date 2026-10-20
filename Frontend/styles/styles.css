@@ -13,8 +13,10 @@
     --lilas: #D78BCA;
     --creme: #F9D0C5;
     --merengue: #f7dbd3;
+    --logo: #FAEAE9;
     --milk: #f9f0e9;
     --white: #fcefee;
+    
 
     --font-display1: 'Playfair Display', Georgia;
     --font-display2: 'Playfair Display', serif;
@@ -60,7 +62,7 @@ header{
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: var(--milk); 
+    background-color: var(--logo); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +83,7 @@ header{
 }
 .logo img{
     width: 40px;
-    height: 48px;
+    height: 46px;
     margin-right: 10px;
 }
 
@@ -721,15 +723,138 @@ header{
     transform: translateY(-2px);
 }
 
+
+
+/* 
+======================
+        FOOTER
+====================== 
+*/
+
+.rodape{
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1.8fr 1fr;
+    height: 200px;
+    background-color: var(--purple);
+}
+
+.infos{
+    margin-left: 10px;
+    max-width: 610px;
+}
+#infos{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    margin-top: 30px;
+    height: 70%;
+    border-right: 2px solid #80508d73;
+}
+.logo-footer{
+    background-color: var(--logo);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--dry-wine);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    margin-right: 0;
+    height: 100%;
+    width: 320px;
+}
+.logo-footer img{
+    width: 100px;
+    height: 118px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+.infos-text{
+    color: var(--white);
+}
+
+.socials{
+    min-width: 0;
+}
+
+.instagram-footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+        "salon salon"
+        "carol gabriela";
+    align-items: center;
+    justify-items: center;
+    gap: 12px 20px;
+
+    height: 70%;
+    margin-top: 30px;
+    
+    border-right: 2px solid #80508d73;
+    box-sizing: border-box;
+}
+.instagram-salon {
+    grid-area: salon;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+    border-radius: 30px;
+    background-color: var(--dry-wine);
+    color: var(--white);
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color .25s, transform .25s;
+}
+.instagram-salon i {
+    font-size: 26px;
+}
+.instagram-salon:hover {
+    background-color: var(--coffe);
+    transform: translateY(-2px);
+}
+
+.instagram-trabalhadora {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--white);
+    font-family: "Raleway", sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .2s, transform .2s;
+}
+.instagram-trabalhadora i {
+    font-size: 28px;
+}
+.instagram-trabalhadora:hover {
+    color: var(--creme);
+    transform: translateY(-2px);
+}
+
+.wsp{
+    margin-right: 10px;
+    
+}
 /* WhatsApp Button */
-#contato .whatsapp {
+.whatsapp {
+    margin-top: 50px;
     text-align: center;
 }
-#contato .whatsapp p {
+.whatsapp p {
     margin-top: 0;
     margin-bottom: 18px;
+    color: var(--white);
 }
-#contato .whatsapp a {
+.whatsapp a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -743,21 +868,21 @@ header{
     text-decoration: none;
     transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
-#contato .whatsapp a i {
+.whatsapp a i {
     display: inline-block;
     font-size: 28px;
 }
-#contato .whatsapp a:hover {
+.whatsapp a:hover {
     background-color: #128C7E;
     transform: translateY(-2px);
     box-shadow: 0 5px 12px rgba(18, 140, 126, 0.25);
 }
 
-/* 
-======================
-        FOOTER
-====================== 
-*/
+
+
+
+
+
 
 /* === Mobile/Short-sized screen Menu === */
 .menu-toggle{
@@ -891,6 +1016,108 @@ header{
     #contato .whatsapp {
         padding: 25px;
     }
+
+    /*
+    ==============
+        Footer
+    ==============
+    */
+
+    .rodape {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
+        height: auto;
+        min-height: 200px;
+        padding: 20px 0;
+        box-sizing: border-box;
+    }
+    
+    .infos {
+        min-width: 0;
+        margin-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+    }
+    
+    #infos {
+        grid-auto-flow: row;
+        gap: 12px;
+        height: auto;
+        margin-top: 0;
+        padding-right: 10px;
+    }
+    
+    .logo-footer {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        min-height: 100px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 1.1rem;
+        border-radius: 30px;
+    }
+    
+    .logo-footer img {
+        width: 70px;
+        height: auto;
+        margin: 0 10px 0 0;
+        flex-shrink: 0;
+    }
+    
+    .infos-text {
+        min-width: 0;
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+    }
+    
+    .instagram-footer {
+        height: 100%;
+        min-width: 0;
+        margin-top: 0;
+        padding: 10px;
+        gap: 16px 8px;
+    }
+    
+    .instagram-salon {
+        max-width: 100%;
+        padding: 10px 12px;
+        gap: 6px;
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+    }
+    
+    .instagram-salon i {
+        font-size: 22px;
+        flex-shrink: 0;
+    }
+    
+    .instagram-trabalhadora {
+        font-size: 0.8rem;
+    }
+    
+    .wsp {
+        min-width: 0;
+        margin: 0;
+        padding: 0 10px;
+    }
+    
+    .whatsapp {
+        margin-top: 25px;
+        padding: 0;
+    }
+    
+    .whatsapp a {
+        max-width: 100%;
+        padding: 10px 12px;
+        gap: 6px;
+        box-sizing: border-box;
+        font-size: 0.8rem;
+    }
+    
+    .whatsapp a i {
+        font-size: 22px;
+        flex-shrink: 0;
+    }
 }
 
 /* === Mobile === */
@@ -900,6 +1127,7 @@ header{
         header
     ==============
     */
+
     header{
         padding: 0 20px;
     }
@@ -934,6 +1162,7 @@ header{
         width: 35px;
         height: 40px;
     }
+
     /* 
     ===============
         Inicio
@@ -1177,6 +1406,123 @@ header{
     }
     #contato .whatsapp a i {
         font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+
+    /*
+    ==============
+        Footer
+    ==============
+    */
+    
+    .rodape {
+        grid-template-columns: minmax(0, 1fr);
+        height: auto;
+        padding: 24px 16px;
+        gap: 24px;
+        box-sizing: border-box;
+    }
+    
+    .infos {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        margin: 0;
+    }
+    
+    #infos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        height: auto;
+        margin-top: 0;
+        padding: 0 0 24px;
+        border-right: none;
+        border-bottom: 2px solid #80508d73;
+    }
+    
+    .logo-footer {
+        width: min(100%, 320px);
+        height: auto;
+        min-height: 100px;
+        padding: 10px;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+        border-radius: 30px;
+    }
+    
+    .logo-footer img {
+        width: 75px;
+        height: auto;
+        margin: 0 10px 0 0;
+        flex-shrink: 0;
+    }
+    
+    .infos-text {
+        max-width: 100%;
+        font-size: 0.85rem;
+        overflow-wrap: anywhere;
+    }
+    
+    .instagram-footer {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0 0 24px;
+        gap: 18px 12px;
+        border-right: none;
+        border-bottom: 2px solid #80508d73;
+    }
+    
+    .instagram-salon {
+        max-width: 100%;
+        padding: 12px 16px;
+        gap: 8px;
+        font-size: 0.9rem;
+        overflow-wrap: anywhere;
+    }
+    
+    .instagram-salon i {
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+    
+    .instagram-trabalhadora {
+        font-size: 0.85rem;
+    }
+    
+    .instagram-trabalhadora i {
+        font-size: 28px;
+    }
+    
+    .wsp {
+        min-width: 0;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .whatsapp {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .whatsapp p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .whatsapp a {
+        max-width: 100%;
+        padding: 12px 16px;
+        gap: 8px;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp a i {
+        font-size: 24px;
         flex-shrink: 0;
     }
 }
