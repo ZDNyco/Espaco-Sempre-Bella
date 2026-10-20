@@ -151,7 +151,7 @@ const conteudos = {
                 textura e estilo de vida para criar um corte que
                 realce o que há de mais bonito em você.
             </p>
-            <button>QUERO AGENDAR</button>
+            <button><a href="#contato">QUERO AGENDAR</a></button>
         </div>
     `,
 
@@ -165,7 +165,7 @@ const conteudos = {
                 Trabalhamos com técnicas de coloração,
                 mechas, balayage e outros estilos.
             </p>
-            <button>QUERO AGENDAR</button>
+            <button><a href="#contato">QUERO AGENDAR</a></button>
         </div>
     `,
 
@@ -179,7 +179,7 @@ const conteudos = {
                 Cuidados para suas unhas com esmaltes,
                 acrílico, fibra e nail art.
             </p>
-            <button>QUERO AGENDAR</button>
+            <button><a href="#contato">QUERO AGENDAR</a></button>
         </div>
     `,
 
@@ -193,7 +193,7 @@ const conteudos = {
                 Hidratação, cronograma capilar, botox
                 e cauterização.
             </p>
-            <button>QUERO AGENDAR</button>
+            <button><a href="#contato">QUERO AGENDAR</a></button>
         </div>
     `
 };
