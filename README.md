@@ -1,7 +1,7 @@
 
 # Site-Espaço Sempre Bella
 
-Site enfocado em mostrar o trabalho da equipe do salão e facilitar o agendamento.
+Site focado em mostrar o trabalho da equipe do salão e facilitar o agendamento.
 
 Funcionalidades:
   *  Responsive design - Toda a pagina esta feita em 3 tipos de tamanho de tela, Celular, Tablets e Computador.
